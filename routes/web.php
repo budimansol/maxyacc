@@ -82,6 +82,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     Route::post('purchase-order-lines/{id}/update', 'PurchaseOrderController@postPurchaseOrderLineUpdate')->name('purchase.order.lines.update');
     Route::post('purchase-order-lines/create', 'PurchaseOrderController@postPurchaseOrderLineInsert')->name('purchase.order.lines.insert');
+
+    Route::get('reporting', 'DashboardController@getReportingPage')->name('reporting-page');
 });
 
 
