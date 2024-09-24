@@ -113,4 +113,18 @@ class DashboardController extends Controller
         return view('admin.reporting', ["products" => $products]);
     }
 
+    public function getAllDataProduct(){
+        $products = Product::all();
+        return response($products);
+    }
+
+    public function getChartProduct(){
+        $data = [
+            "less_50000" => 50,
+            "_50000_99999" => 43,
+            "_100000_999999" => 343,
+            "more_1000000" => 21
+        ];
+        return response($data);
+    }
 }
